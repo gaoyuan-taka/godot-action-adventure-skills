@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://GeneralNode/HitBox/hit_box.gd" id="1_hitbox"]
+
+[node name="HitBox" type="Area2D"]
+# HitBox = 攻击区域
+# collision_layer = 0 表示不被其他区域检测
+# collision_mask = 2 表示检测第2层（PlayerHurt）
+# 根据项目需要修改 collision_mask 值
+collision_layer = 0
+collision_mask = 2
+monitorable = false
+script = ExtResource("1_hitbox")
+
+# 使用说明：
+# 1. 将此场景拖入攻击源节点下（如武器、技能）
+# 2. 添加 CollisionShape2D 子节点
+# 3. 配置碰撞形状
+# 4. 在检查器中设置 damage 值

@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://GeneralNode/HurtBox/hurt_box.gd" id="1_hurtbox"]
+
+[node name="HurtBox" type="Area2D"]
+# HurtBox = 受伤区域
+# collision_layer = 256 表示第9层（EnemyHurt）
+# collision_mask = 0 表示不主动检测其他区域
+# 根据项目需要修改 collision_layer 值
+collision_layer = 256
+collision_mask = 0
+monitoring = false
+script = ExtResource("1_hurtbox")
+
+# 使用说明：
+# 1. 将此场景拖入需要受伤检测的节点下（如敌人、玩家）
+# 2. 添加 CollisionShape2D 子节点
+# 3. 配置碰撞形状
